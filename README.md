@@ -4,11 +4,10 @@ To run this keygen, simply navigate to the **LaFarge-CrackMe2-Keygen/bin/x64/Rel
 #### Screenshot of LaFarge-CrackMe2-Keygen
 ![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/c5eb470f-15cf-41bd-826b-88a80fb8ba50)
 
-
 ## Serial key check subroutine
 The serial key check subroutine begins at the address on ```0x4010B4```. The serial key generation algorithm itself begins on ```0x40117A```.
 The user-entered serial key is compared with the generated serial key on ```0x4012B5``` using ```lstrcmp```. Notice both the user-entered
-key and the generated serial key both being pushed onto the stack just before ```lstrcmp``` is called.
+key and the generated serial key being pushed onto the stack just before ```lstrcmp``` is called.
 #### Serial compare subroutine viewed in x32dbg
 ![Serial key compare](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/fab08de8-a3aa-427c-b927-01d692f15a93)
 
