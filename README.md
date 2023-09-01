@@ -20,7 +20,7 @@ The serial key generation algorithm is based on the entered username, and consis
 4. Perform XOR operations on the resulting bytes from the third transformation, using the array ```{0xB5, 0x1B, 0xC9, 0x50, 0x73}```.
 5. Take the initial four numbers at ```0x406345``` and add them to the numbers from the key that was generated through the first four transformations.
 6. Take the DWORD value at ```0x406549``` and store it in ```EAX```, then divide ```EAX``` by 0xA, storing the result in ```EAX```. Then add 0x30 to the remainder.
-7. Reverse the characters of the serial to get the final number.
+7. Reverse the characters of the 6th transformation to get the final number.
 
 ## Patching the .exe
 As opposed to reversing the serial key generation algorithm, it is also possible to take a shortcut by modifying the .exe slightly. By changing the ```jne``` instruction
