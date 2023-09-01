@@ -20,3 +20,8 @@ The serial key generation algorithm is based on the entered username, and consis
 5. Take the initial four numbers at ```0x406345``` and add them to the numbers from the key that was generated through the first four transformations.
 6. Take the DWORD value at ```0x406549``` and store it in ```EAX```, then divide ```EAX``` by 0xA, storing the result in ```EAX```. 0x30 is then added to the remainder.
 7. Reverse the characters of the serial to the get final number.
+
+# Patching the .exe
+As opposed to reversing the serial key generation algorithm, it is also possible to take a shortcut by modifying the .exe slightly. By changing the ```jne``` instruction
+at ```0x4012BC``` to ```jmp```, you effectively bypass the serial check subroutine so that the program counts any serial key as valid. Although it should be noted
+that the ruleset for this particular crackme specifies "no patching".
