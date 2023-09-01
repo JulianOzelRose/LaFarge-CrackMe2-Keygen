@@ -16,9 +16,9 @@ The serial key generation algorithm is based on the entered username, and consis
 1. Perform XOR operations on each character of the username using the array ```{0xAA, 0x89, 0xC4, 0xFE, 0x46}```.
 2. Perform XOR operations on the resulting bytes from the first transformation, using the array ```{0x78, 0xF0, 0xD0, 0x03, 0xE7}```.
 3. Perform XOR operations on the resulting bytes from the second transformation using the array ```{0xF7, 0xFD, 0xF4, 0xE7, 0xB9}```.
-4. Perform XOR operations on the bytes from the third transformation, using the array ```{0xB5, 0x1B, 0xC9, 0x50, 0x73}```.
+4. Perform XOR operations on the resulting bytes from the third transformation, using the array ```{0xB5, 0x1B, 0xC9, 0x50, 0x73}```.
 5. Take the initial four numbers at ```0x406345``` and add them to the numbers from the key that was generated through the first four transformations.
-6. Take the DWORD value at ```0x406549``` and store it in ```EAX```, then divide ```EAX``` by 0xA, storing the result in ```EAX```. 0x30 is then added to the remainder.
+6. Take the DWORD value at ```0x406549``` and store it in ```EAX```, then divide ```EAX``` by 0xA, storing the result in ```EAX```. Then add 0x30 to the remainder.
 7. Reverse the characters of the serial to the get final number.
 
 # Patching the .exe
@@ -35,5 +35,5 @@ During the process of reverse engineering and creating the keygen for LaFarge's 
 - [YouTube: Reverse Engineering the LaFarge Crackme #2 and keygen](https://www.youtube.com/watch?v=DEDYk8zN53A)
   This video tutorial provides a detailed walkthrough of the process of reversing the algorithm. Following along with the video helped solidify my understanding of the keygen creation process.
 
-- [Crackmes.one](https://crackmes.one/)
+- [crackmes.one](https://crackmes.one/)
   The original source of the crackme challenge, this platform provides a repository of reverse engineering challenges, crackmes, and solutions.
