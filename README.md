@@ -2,7 +2,8 @@
 This is a simple keygen for LaFarge's crackme #2. You can find a link to the crackme [here](https://crackmes.one/crackme/5ab77f5633c5d40ad448c2f2).
 To run this keygen, simply navigate to the **LaFarge-CrackMe2-Keygen/bin/x64/Release** folder, download the .exe, and open it.
 #### Screenshot of LaFarge-CrackMe2-Keygen
-![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/abe91478-a045-4774-b24f-3d8e3e505dda)
+![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/c5eb470f-15cf-41bd-826b-88a80fb8ba50)
+
 
 # Serial key check subroutine
 The serial key check subroutine begins at the address on ```0x4010B4```. The serial key generation algorithm itself begins on ```0x4012A3```.
