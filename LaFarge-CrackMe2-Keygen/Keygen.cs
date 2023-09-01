@@ -39,15 +39,15 @@ namespace LaFarge_CrackMe2_Keygen
             return usernameBytes;
         }
 
-        static List<byte> XorLeftToRight(List<byte> xorBytes, List<byte> plaintextUsername)
+        static List<byte> XorLeftToRight(List<byte> xorBytes, List<byte> byteArray)
         {
-            List<byte> cipherText = new List<byte>(new byte[plaintextUsername.Count]);
+            List<byte> cipherText = new List<byte>(new byte[byteArray.Count]);
 
             int keyIndex = 0;
 
-            for (int i = 0; i < plaintextUsername.Count; i++)
+            for (int i = 0; i < byteArray.Count; i++)
             {
-                byte currentUsernameByte = plaintextUsername[i];
+                byte currentUsernameByte = byteArray[i];
                 byte keyByte = xorBytes[keyIndex];
                 byte cipherByte = (byte)(currentUsernameByte ^ keyByte);
                 cipherText[i] = cipherByte;
@@ -64,16 +64,16 @@ namespace LaFarge_CrackMe2_Keygen
             return cipherText;
         }
 
-        static List<byte> XorRightToLeft(List<byte> xorBytes, List<byte> plaintextUsername)
+        static List<byte> XorRightToLeft(List<byte> xorBytes, List<byte> byteArray)
         {
-            List<byte> cipherText = new List<byte>(new byte[plaintextUsername.Count]);
+            List<byte> cipherText = new List<byte>(new byte[byteArray.Count]);
 
             int keyLength = xorBytes.Count;
             int keyIndex = 0;
             
-            for (int i = plaintextUsername.Count - 1; i >= 0; i--)
+            for (int i = byteArray.Count - 1; i >= 0; i--)
             {
-                byte currentUsernameByte = plaintextUsername[i];
+                byte currentUsernameByte = byteArray[i];
                 byte keyByte = xorBytes[keyIndex];
                 byte cipherByte = (byte)(currentUsernameByte ^ keyByte);
 
@@ -91,15 +91,15 @@ namespace LaFarge_CrackMe2_Keygen
             return cipherText;
         }
 
-        static List<byte> AddRightToLeft(List<byte> zeroBytes, List<byte> plaintextUsername)
+        static List<byte> AddRightToLeft(List<byte> zeroBytes, List<byte> byteArray)
         {
-            List<byte> resultantBytes = new List<byte>(new byte[plaintextUsername.Count]);
+            List<byte> resultantBytes = new List<byte>(new byte[byteArray.Count]);
 
             int keyIndex = 0;
             
-            for (int i = 0; i < plaintextUsername.Count; i++)
+            for (int i = 0; i < byteArray.Count; i++)
             {
-                byte currentUsernameByte = plaintextUsername[i];
+                byte currentUsernameByte = byteArray[i];
                 byte keyByte = zeroBytes[keyIndex];
                 byte addedByte = (byte)((currentUsernameByte + keyByte) & 0xFF);
 
