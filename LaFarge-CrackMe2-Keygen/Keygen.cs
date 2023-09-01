@@ -41,7 +41,6 @@ namespace LaFarge_CrackMe2_Keygen
 
         static List<byte> XorLeftToRight(List<byte> xorBytes, List<byte> plaintextUsername)
         {
-            List<byte> keyCircle = new List<byte>(xorBytes);
             List<byte> cipherText = new List<byte>(new byte[plaintextUsername.Count]);
 
             int keyIndex = 0;
@@ -49,14 +48,14 @@ namespace LaFarge_CrackMe2_Keygen
             for (int i = 0; i < plaintextUsername.Count; i++)
             {
                 byte currentUsernameByte = plaintextUsername[i];
-                byte keyByte = keyCircle[keyIndex];
+                byte keyByte = xorBytes[keyIndex];
                 byte cipherByte = (byte)(currentUsernameByte ^ keyByte);
                 cipherText[i] = cipherByte;
-                keyCircle[keyIndex] = currentUsernameByte;
+                xorBytes[keyIndex] = currentUsernameByte;
 
                 keyIndex++;
 
-                if (keyIndex == keyCircle.Count)
+                if (keyIndex == xorBytes.Count)
                 {
                     keyIndex = 0;
                 }
@@ -67,20 +66,19 @@ namespace LaFarge_CrackMe2_Keygen
 
         static List<byte> XorRightToLeft(List<byte> xorBytes, List<byte> plaintextUsername)
         {
-            List<byte> keyCircle = new List<byte>(xorBytes);
             List<byte> cipherText = new List<byte>(new byte[plaintextUsername.Count]);
 
-            int keyLength = keyCircle.Count;
+            int keyLength = xorBytes.Count;
             int keyIndex = 0;
             
             for (int i = plaintextUsername.Count - 1; i >= 0; i--)
             {
                 byte currentUsernameByte = plaintextUsername[i];
-                byte keyByte = keyCircle[keyIndex];
+                byte keyByte = xorBytes[keyIndex];
                 byte cipherByte = (byte)(currentUsernameByte ^ keyByte);
 
                 cipherText[i] = cipherByte;
-                keyCircle[keyIndex] = currentUsernameByte;
+                xorBytes[keyIndex] = currentUsernameByte;
 
                 keyIndex++;
 
@@ -95,7 +93,6 @@ namespace LaFarge_CrackMe2_Keygen
 
         static List<byte> AddRightToLeft(List<byte> zeroBytes, List<byte> plaintextUsername)
         {
-            List<byte> keyCircle = new List<byte>(zeroBytes);
             List<byte> resultantBytes = new List<byte>(new byte[plaintextUsername.Count]);
 
             int keyIndex = 0;
@@ -103,21 +100,21 @@ namespace LaFarge_CrackMe2_Keygen
             for (int i = 0; i < plaintextUsername.Count; i++)
             {
                 byte currentUsernameByte = plaintextUsername[i];
-                byte keyByte = keyCircle[keyIndex];
+                byte keyByte = zeroBytes[keyIndex];
                 byte addedByte = (byte)((currentUsernameByte + keyByte) & 0xFF);
 
                 resultantBytes[i] = addedByte;
-                keyCircle[keyIndex] = addedByte;
+                zeroBytes[keyIndex] = addedByte;
 
                 keyIndex++;
 
-                if (keyIndex == keyCircle.Count)
+                if (keyIndex == zeroBytes.Count)
                 {
                     keyIndex = 0;
                 }
             }
 
-            return keyCircle;
+            return zeroBytes;
         }
 
         static List<byte> ConvertToLittleEndian(List<byte> bigEndianData)
