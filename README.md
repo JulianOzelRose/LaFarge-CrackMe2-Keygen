@@ -7,7 +7,7 @@ To run this keygen, simply navigate to the **LaFarge-CrackMe2-Keygen/bin/x64/Rel
 # Serial key check subroutine
 The serial key check subroutine begins at the address on ```0x4010B4```. The serial key generation algorithm itself begins on ```0x4012A3```.
 The user-entered serial key is compared with the generated serial key on ```0x4012B5``` using ```lstrcmp```. Notice both the user-entered
-key and the generated serial key both being pushed onto the stack just before ```lstrcmp```.
+key and the generated serial key both being pushed onto the stack just before ```lstrcmp``` is called.
 #### Serial compare subroutine viewed in x32dbg
 ![Serial key compare](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/fab08de8-a3aa-427c-b927-01d692f15a93)
 
@@ -25,3 +25,15 @@ The serial key generation algorithm is based on the entered username, and consis
 As opposed to reversing the serial key generation algorithm, it is also possible to take a shortcut by modifying the .exe slightly. By changing the ```jne``` instruction
 at ```0x4012BC``` to ```jmp```, you effectively bypass the serial check subroutine so that the program counts any serial key as valid. Although it should be noted
 that the ruleset for this particular crackme specifies "no patching".
+
+# Sources
+During the process of reverse engineering and creating the keygen for LaFarge's crackme #2, I relied on the following sources for guidance, insights, and techniques:
+
+- [aleid: Solution-LaFarges-crackme-2](https://www.aldeid.com/wiki/Solution-LaFarges-crackme-2)
+  This comprehensive write-up by aleid offers a step-by-step walkthrough of the reverse engineering process for LaFarge's crackme #2. The detailed explanations of the algorithms and techniques used were instrumental in understanding the crackme's inner workings.
+
+- [YouTube: Reverse Engineering the LaFarge Crackme #2 and keygen](https://www.youtube.com/watch?v=DEDYk8zN53A)
+  This video tutorial provides a detailed walkthrough of the process of reversing the algorithm. Following along with the video helped solidify my understanding of the keygen creation process.
+
+- [Crackmes.one](https://crackmes.one/)
+  The original source of the crackme challenge, this platform provides a repository of reverse engineering challenges, crackmes, and solutions.
