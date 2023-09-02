@@ -41,7 +41,7 @@ namespace LaFarge_CrackMe2_Keygen
 
         static List<byte> XorLeftToRight(List<byte> xorBytes, List<byte> byteArray)
         {
-            List<byte> cipherText = new List<byte>(new byte[byteArray.Count]);
+            List<byte> cipherBytes = new List<byte>(new byte[byteArray.Count]);
 
             int keyIndex = 0;
 
@@ -50,7 +50,8 @@ namespace LaFarge_CrackMe2_Keygen
                 byte currentUsernameByte = byteArray[i];
                 byte keyByte = xorBytes[keyIndex];
                 byte cipherByte = (byte)(currentUsernameByte ^ keyByte);
-                cipherText[i] = cipherByte;
+
+                cipherBytes[i] = cipherByte;
                 xorBytes[keyIndex] = currentUsernameByte;
 
                 keyIndex++;
@@ -61,12 +62,12 @@ namespace LaFarge_CrackMe2_Keygen
                 }
             }
 
-            return cipherText;
+            return cipherBytes;
         }
 
         static List<byte> XorRightToLeft(List<byte> xorBytes, List<byte> byteArray)
         {
-            List<byte> cipherText = new List<byte>(new byte[byteArray.Count]);
+            List<byte> cipherBytes = new List<byte>(new byte[byteArray.Count]);
 
             int keyLength = xorBytes.Count;
             int keyIndex = 0;
@@ -77,7 +78,7 @@ namespace LaFarge_CrackMe2_Keygen
                 byte keyByte = xorBytes[keyIndex];
                 byte cipherByte = (byte)(currentUsernameByte ^ keyByte);
 
-                cipherText[i] = cipherByte;
+                cipherBytes[i] = cipherByte;
                 xorBytes[keyIndex] = currentUsernameByte;
 
                 keyIndex++;
@@ -88,7 +89,7 @@ namespace LaFarge_CrackMe2_Keygen
                 }
             }
 
-            return cipherText;
+            return cipherBytes;
         }
 
         static List<byte> AddRightToLeft(List<byte> zeroBytes, List<byte> byteArray)
@@ -117,24 +118,24 @@ namespace LaFarge_CrackMe2_Keygen
             return zeroBytes;
         }
 
-        static List<byte> ConvertToLittleEndian(List<byte> bigEndianData)
+        static List<byte> ConvertToLittleEndian(List<byte> bigEndianBytes)
         {
-            List<byte> littleEndianData = new List<byte>();
+            List<byte> littleEndianBytes = new List<byte>();
 
-            for (int i = bigEndianData.Count - 1; i >= 0; i--)
+            for (int i = bigEndianBytes.Count - 1; i >= 0; i--)
             {
-                littleEndianData.Add(bigEndianData[i]);
+                littleEndianBytes.Add(bigEndianBytes[i]);
             }
 
-            littleEndianData.Reverse();
+            littleEndianBytes.Reverse();
 
-            return littleEndianData;
+            return littleEndianBytes;
         }
 
         static List<byte> Divide(List<byte> littleEndianBytes)
         {
             int divisor = 0xA;                              // Divisor for decimal representation
-            List<byte> quotientDigits = new List<byte>();   // Digits of the quotient
+            List<byte> quotientBytes = new List<byte>();   // Digits of the quotient
 
             long currentValue = 0;                          // Current chunk being processed
             int shiftAmount = 0;                            // Number of bits to shift for the next chunk
@@ -151,7 +152,7 @@ namespace LaFarge_CrackMe2_Keygen
                     {
                         long remainder = currentValue % divisor;
                         currentValue /= divisor;
-                        quotientDigits.Add((byte)(0x30 + remainder));
+                        quotientBytes.Add((byte)(0x30 + remainder));
                     }
 
                     shiftAmount = 0;
@@ -164,27 +165,41 @@ namespace LaFarge_CrackMe2_Keygen
             {
                 long remainder = currentValue % divisor;
                 currentValue /= divisor;
-                quotientDigits.Add((byte)(0x30 + remainder));
+                quotientBytes.Add((byte)(0x30 + remainder));
             }
 
-            return quotientDigits;
+            return quotientBytes;
         }
 
         static long ReverseNumber(List<byte> byteArray)
         {
-            long result = 0;
+            long reversedNumber = 0;
+            int trailingZeroCount = 0;
 
-            for (int i = 0; i < byteArray.Count; i++)
+            for (int i = byteArray.Count - 1; i >= 0; i--)
             {
-                result = result * 10 + (byteArray[i] - 0x30);
+                byte currentByte = byteArray[i];
+
+                if (currentByte == 0x30)
+                {
+                    trailingZeroCount++;
+                }
+                else
+                {
+                    trailingZeroCount = 0;
+                }
+
+                reversedNumber = reversedNumber * 10 + (currentByte - 0x30);
             }
 
-            long reversedNumber = 0;
-
-            while (result > 0)
+            if (trailingZeroCount > 0)
             {
-                reversedNumber = reversedNumber * 10 + result % 10;
-                result /= 10;
+                trailingZeroCount--;
+            }
+
+            for (int i = 0; i < trailingZeroCount; i++)
+            {
+                reversedNumber *= 10;
             }
 
             return reversedNumber;
