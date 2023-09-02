@@ -9,7 +9,7 @@ The serial key check subroutine begins at the address on ```0x4010B4```. The ser
 The user-entered serial key is compared with the generated serial key on ```0x4012B5``` using ```lstrcmp```. Notice both the user-entered
 key and the generated serial key being pushed onto the stack just before ```lstrcmp``` is called.
 #### Serial compare subroutine viewed in x32dbg
-![Serial key compare](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/fab08de8-a3aa-427c-b927-01d692f15a93)
+![Serial key compare](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/ec2ba48c-76b4-4068-a8c1-abc43ca41dfc)
 
 ## Serial key generation algorithm
 The serial key generation algorithm is based on the entered username, and consists of 7 transformations. The first character of the username is ignored.
