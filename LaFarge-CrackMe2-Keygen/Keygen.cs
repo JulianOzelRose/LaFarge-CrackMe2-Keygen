@@ -118,31 +118,17 @@ namespace LaFarge_CrackMe2_Keygen
             return zeroBytes;
         }
 
-        static List<byte> ConvertToLittleEndian(List<byte> bigEndianBytes)
-        {
-            List<byte> littleEndianBytes = new List<byte>();
-
-            for (int i = bigEndianBytes.Count - 1; i >= 0; i--)
-            {
-                littleEndianBytes.Add(bigEndianBytes[i]);
-            }
-
-            littleEndianBytes.Reverse();
-
-            return littleEndianBytes;
-        }
-
-        static List<byte> Divide(List<byte> littleEndianBytes)
+        static List<byte> Divide(List<byte> zeroResult)
         {
             int divisor = 0xA;                              // Divisor for decimal representation
-            List<byte> quotientBytes = new List<byte>();   // Digits of the quotient
+            List<byte> quotientBytes = new List<byte>();    // Digits of the quotient
 
             long currentValue = 0;                          // Current chunk being processed
             int shiftAmount = 0;                            // Number of bits to shift for the next chunk
 
-            for (int i = 0; i < littleEndianBytes.Count; i++)
+            for (int i = 0; i < zeroResult.Count; i++)
             {
-                currentValue |= ((long)littleEndianBytes[i] << shiftAmount);
+                currentValue |= ((long)zeroResult[i] << shiftAmount);
                 shiftAmount += 8;
 
                 if (shiftAmount >= 64)
@@ -217,16 +203,13 @@ namespace LaFarge_CrackMe2_Keygen
             // Parse username as byte array
             List<byte> usernameBytes = GetUsernameBytes(username);
 
-            // XOR and zero operations
+            // XOR, zero and division operations
             List<byte> firstXorResult = XorLeftToRight(xorBytes1, usernameBytes);
             List<byte> secondXorResult = XorRightToLeft(xorBytes2, firstXorResult);
             List<byte> thirdXorResult = XorLeftToRight(xorBytes3, secondXorResult);
             List<byte> fourthXorResult = XorRightToLeft(xorBytes4, thirdXorResult);
             List<byte> zeroResult = AddRightToLeft(zeroBytes, fourthXorResult);
-
-            // Divide and conversion operations
-            List<byte> littleEndianBytes = ConvertToLittleEndian(zeroResult);
-            List<byte> dividedBytes = Divide(littleEndianBytes);
+            List<byte> dividedBytes = Divide(zeroResult);
 
             // Reverse number for serial key
             long serialKey = ReverseNumber(dividedBytes);
