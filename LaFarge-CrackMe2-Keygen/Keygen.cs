@@ -193,7 +193,7 @@ namespace LaFarge_CrackMe2_Keygen
 
         void GenerateKey(string username)
         {
-            // Declare xor and zero byte arrays
+            // Declare XOR and zero byte arrays
             List<byte> xorBytes1 = new List<byte> { 0xAA, 0x89, 0xC4, 0xFE, 0x46 };
             List<byte> xorBytes2 = new List<byte> { 0x78, 0xF0, 0xD0, 0x03, 0xE7 };
             List<byte> xorBytes3 = new List<byte> { 0xF7, 0xFD, 0xF4, 0xE7, 0xB9 };
@@ -209,10 +209,10 @@ namespace LaFarge_CrackMe2_Keygen
             List<byte> thirdXorResult = XorLeftToRight(xorBytes3, secondXorResult);
             List<byte> fourthXorResult = XorRightToLeft(xorBytes4, thirdXorResult);
             List<byte> zeroResult = AddRightToLeft(zeroBytes, fourthXorResult);
-            List<byte> dividedBytes = Divide(zeroResult);
+            List<byte> dividedResult = Divide(zeroResult);
 
             // Reverse number for serial key
-            long serialKey = ReverseNumber(dividedBytes);
+            long serialKey = ReverseNumber(dividedResult);
             serialKeyTextBox.Text = serialKey.ToString();
         }
 
