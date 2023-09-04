@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="crackme2.ico" />
-    <Content Include="LaFarge-CrackMe2-Keygen.exe" />
+    <Content Include="bin\x64\Release\LaFarge-CrackMe2-Keygen.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
