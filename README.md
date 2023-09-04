@@ -1,7 +1,7 @@
 # LaFarge-CrackMe2-Keygen
 This is a simple keygen for LaFarge's crackme #2. You can find a link to the crackme [here](https://crackmes.one/crackme/5ab77f5633c5d40ad448c2f2).
-To run this keygen, simply navigate to the **LaFarge-CrackMe2-Keygen/bin/x64/Release** folder, download the .exe, and open it. To generate a key,
-enter a username at least 4 characters long, then click "Generate Key".
+To run this keygen, simply navigate to the [Release](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/tree/master/LaFarge-CrackMe2-Keygen/bin/x64/Release) folder,
+then download ```LaFarge-CrackMe2-Keygen.exe```, and open it. To generate a key, enter a username at least 4 characters long, then click ```Generate Key```.
 
 #### Screenshot of LaFarge-CrackMe2-Keygen
 ![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/4864e5eb-088d-4c79-89e0-abec8c4f2f6c)
