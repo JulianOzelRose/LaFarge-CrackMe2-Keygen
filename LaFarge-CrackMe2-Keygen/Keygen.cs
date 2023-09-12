@@ -203,13 +203,13 @@ namespace LaFarge_CrackMe2_Keygen
             // Parse username as byte array
             List<byte> usernameBytes = GetUsernameBytes(username);
 
-            // XOR, zero and division operations
+            // XOR, addition, and division operations
             List<byte> firstXorResult = XorLeftToRight(xorBytes1, usernameBytes);
             List<byte> secondXorResult = XorRightToLeft(xorBytes2, firstXorResult);
             List<byte> thirdXorResult = XorLeftToRight(xorBytes3, secondXorResult);
             List<byte> fourthXorResult = XorRightToLeft(xorBytes4, thirdXorResult);
-            List<byte> zeroResult = AddRightToLeft(zeroBytes, fourthXorResult);
-            List<byte> dividedResult = Divide(zeroResult);
+            List<byte> addedResult = AddRightToLeft(zeroBytes, fourthXorResult);
+            List<byte> dividedResult = Divide(addedResult);
 
             // Reverse number for serial key
             long serialKey = ReverseNumber(dividedResult);
