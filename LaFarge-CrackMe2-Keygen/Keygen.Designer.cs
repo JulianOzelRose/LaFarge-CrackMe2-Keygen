@@ -94,7 +94,7 @@ namespace LaFarge_CrackMe2_Keygen
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Keygen";
-            this.Text = "LaFarge-CrackMe2-Keygen";
+            this.Text = "LaFarge\'s CrackMe #2 Keygen";
             this.ResumeLayout(false);
             this.PerformLayout();
 
