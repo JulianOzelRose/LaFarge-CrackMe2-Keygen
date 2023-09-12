@@ -1,7 +1,8 @@
-# LaFarge-CrackMe2-Keygen
-This is a simple keygen for LaFarge's crackme #2. You can find a link to the crackme [here](https://crackmes.one/crackme/5ab77f5633c5d40ad448c2f2).
+# LaFarge's CrackMe #2 Keygen
+This is a simple keygen for LaFarge's CrackMe #2. You can find a link to the crackme challenge [here](https://crackmes.one/crackme/5ab77f5633c5d40ad448c2f2).
 To run this keygen, simply navigate to the [Release](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/tree/master/LaFarge-CrackMe2-Keygen/bin/x64/Release) folder,
-then download ```LaFarge-CrackMe2-Keygen.exe```, and open it. To generate a key, enter a username at least 4 characters long, then click ```Generate Key```.
+then download ```LaFarge-CrackMe2-Keygen.exe```, and open it. To generate a key, enter a username at least 4 characters long, then click ```Generate Key```. The keygen
+will then provide you with a valid serial key.
 
 #### Screenshot of LaFarge-CrackMe2-Keygen
 ![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/4864e5eb-088d-4c79-89e0-abec8c4f2f6c)
@@ -29,10 +30,10 @@ at ```0x4012BC``` to ```jmp```, you effectively bypass the serial check subrouti
 that the ruleset for this particular crackme specifies "no patching".
 
 ## Sources
-During the process of reverse engineering and creating the keygen for LaFarge's crackme #2, I relied on the following sources for guidance, insights, and techniques:
+During the process of reverse engineering and creating the keygen for LaFarge's CrackMe #2, I relied on the following sources for guidance, insights, and techniques:
 
 - [aleid: Solution-LaFarges-crackme-2](https://www.aldeid.com/wiki/Solution-LaFarges-crackme-2)
-  This comprehensive write-up by aleid offers a step-by-step walkthrough of the reverse engineering process for LaFarge's crackme #2. The detailed explanations of the algorithms and techniques used were instrumental in understanding the crackme's inner workings.
+  This comprehensive write-up by aleid offers a step-by-step walkthrough of the reverse engineering process for LaFarge's CrackMe #2. The detailed explanations of the algorithms and techniques used were instrumental in understanding the crackme's inner workings.
 
 - [YouTube: Reverse Engineering the LaFarge Crackme #2 and keygen](https://www.youtube.com/watch?v=DEDYk8zN53A)
   This video tutorial provides a detailed walkthrough of the process of reversing the algorithm. Following along with the video helped solidify my understanding of the keygen creation process.
