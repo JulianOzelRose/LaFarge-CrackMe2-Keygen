@@ -5,7 +5,7 @@ then download ```LaFarge-CrackMe2-Keygen.exe```, and open it. To generate a key,
 will then provide you with a valid serial key.
 
 #### Screenshot of LaFarge-CrackMe2-Keygen
-![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/4864e5eb-088d-4c79-89e0-abec8c4f2f6c)
+![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/2cb914f8-c56b-4b98-b547-e17c08b98edc)
 
 ## Serial key check subroutine
 The serial key check subroutine begins at the address on ```0x4010B4```. The serial key generation algorithm itself begins on ```0x40117A```.
