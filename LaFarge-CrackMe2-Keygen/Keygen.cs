@@ -15,6 +15,7 @@ namespace LaFarge_CrackMe2_Keygen
         public Keygen()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         static List<byte> GetUsernameBytes(string username)
@@ -223,11 +224,49 @@ namespace LaFarge_CrackMe2_Keygen
             if (username.Length < 4)
             {
                 serialKeyTextBox.Clear();
+                CopyToClipboardButton.Enabled = false;
                 MessageBox.Show("Username must be at least 4 characters.", "ERROR");      
             }
             else
             {
                 GenerateKey(username);
+                CopyToClipboardButton.Enabled = true;
+            }
+        }
+
+        private void Keygen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string username = usernameTextBox.Text;
+
+                if (username.Length < 4)
+                {
+                    serialKeyTextBox.Clear();
+                    CopyToClipboardButton.Enabled = false;
+                    MessageBox.Show("Username must be at least 4 characters.", "ERROR");
+                }
+                else
+                {
+                    GenerateKey(username);
+                    CopyToClipboardButton.Enabled = true;
+                }
+
+                e.SuppressKeyPress = true;
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {  
+                Application.Exit();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void CopyToClipboardButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(serialKeyTextBox.Text))
+            {
+                Clipboard.SetText(serialKeyTextBox.Text);
             }
         }
     }

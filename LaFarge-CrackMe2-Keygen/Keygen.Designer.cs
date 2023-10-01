@@ -35,6 +35,7 @@ namespace LaFarge_CrackMe2_Keygen
             this.GenerateKeyButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.CopyToClipboardButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usernameTextBox
@@ -54,9 +55,9 @@ namespace LaFarge_CrackMe2_Keygen
             // 
             // GenerateKeyButton
             // 
-            this.GenerateKeyButton.Location = new System.Drawing.Point(145, 70);
+            this.GenerateKeyButton.Location = new System.Drawing.Point(100, 70);
             this.GenerateKeyButton.Name = "GenerateKeyButton";
-            this.GenerateKeyButton.Size = new System.Drawing.Size(91, 32);
+            this.GenerateKeyButton.Size = new System.Drawing.Size(102, 32);
             this.GenerateKeyButton.TabIndex = 2;
             this.GenerateKeyButton.Text = "Generate Key";
             this.GenerateKeyButton.UseVisualStyleBackColor = true;
@@ -80,11 +81,23 @@ namespace LaFarge_CrackMe2_Keygen
             this.label2.TabIndex = 4;
             this.label2.Text = "Key:";
             // 
+            // CopyToClipboardButton
+            // 
+            this.CopyToClipboardButton.Enabled = false;
+            this.CopyToClipboardButton.Location = new System.Drawing.Point(208, 70);
+            this.CopyToClipboardButton.Name = "CopyToClipboardButton";
+            this.CopyToClipboardButton.Size = new System.Drawing.Size(102, 32);
+            this.CopyToClipboardButton.TabIndex = 5;
+            this.CopyToClipboardButton.Text = "Copy To Clipboard";
+            this.CopyToClipboardButton.UseVisualStyleBackColor = true;
+            this.CopyToClipboardButton.Click += new System.EventHandler(this.CopyToClipboardButton_Click);
+            // 
             // Keygen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 110);
+            this.Controls.Add(this.CopyToClipboardButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GenerateKeyButton);
@@ -94,7 +107,9 @@ namespace LaFarge_CrackMe2_Keygen
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Keygen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LaFarge\'s CrackMe #2 Keygen";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Keygen_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,6 +122,7 @@ namespace LaFarge_CrackMe2_Keygen
         private System.Windows.Forms.Button GenerateKeyButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button CopyToClipboardButton;
     }
 }
 
