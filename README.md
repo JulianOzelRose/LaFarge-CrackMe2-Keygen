@@ -16,13 +16,17 @@ key and the generated serial key being pushed onto the stack just before ```lstr
 
 ## Serial key generation algorithm
 The serial key generation algorithm is based on the entered username, and consists of 7 transformations. The first character of the username is ignored.
-1. Perform XOR operations on each character of the username using the array ```{0xAA, 0x89, 0xC4, 0xFE, 0x46}```.
-2. Perform XOR operations on the resulting bytes from the first transformation, using the array ```{0x78, 0xF0, 0xD0, 0x03, 0xE7}```.
-3. Perform XOR operations on the resulting bytes from the second transformation using the array ```{0xF7, 0xFD, 0xF4, 0xE7, 0xB9}```.
-4. Perform XOR operations on the resulting bytes from the third transformation, using the array ```{0xB5, 0x1B, 0xC9, 0x50, 0x73}```.
-5. Take the initial four numbers at ```0x406345``` and add them to the numbers from the key that was generated through the first four transformations.
-6. Take the DWORD value at ```0x406549``` and store it in ```EAX```, then divide ```EAX``` by 0xA, storing the result in ```EAX```. Then add 0x30 to the remainder.
-7. Reverse the characters from the 6th transformation to get the final number.
+1. Perform XOR operations on each character of the username using the array:<br>
+```{0xAA, 0x89, 0xC4, 0xFE, 0x46}```
+2. Perform XOR operations on the resulting bytes from the first transformation, using the array:<br>
+```{0x78, 0xF0, 0xD0, 0x03, 0xE7}```
+4. Perform XOR operations on the resulting bytes from the second transformation using the array:<br>
+```{0xF7, 0xFD, 0xF4, 0xE7, 0xB9}```
+5. Perform XOR operations on the resulting bytes from the third transformation, using the array:<br>
+```{0xB5, 0x1B, 0xC9, 0x50, 0x73}```
+6. Take the initial four numbers at ```0x406345``` and add them to the numbers from the key that was generated through the first four transformations.
+7. Take the DWORD value at ```0x406549``` and store it in ```EAX```, then divide ```EAX``` by 0xA, storing the result in ```EAX```. Then add 0x30 to the remainder.
+8. Reverse the characters from the 6th transformation to get the final number.
 
 ## Patching the .exe file
 As opposed to reversing the serial key generation algorithm, it is also possible to take a shortcut by modifying the .exe file slightly. By changing the ```jne``` instruction
