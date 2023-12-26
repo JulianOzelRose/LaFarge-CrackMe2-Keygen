@@ -225,7 +225,7 @@ namespace LaFarge_CrackMe2_Keygen
             {
                 serialKeyTextBox.Clear();
                 CopyToClipboardButton.Enabled = false;
-                MessageBox.Show("Username must be at least 4 characters.", "ERROR");      
+                MessageBox.Show("Username must be at least 4 characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -244,7 +244,7 @@ namespace LaFarge_CrackMe2_Keygen
                 {
                     serialKeyTextBox.Clear();
                     CopyToClipboardButton.Enabled = false;
-                    MessageBox.Show("Username must be at least 4 characters.", "ERROR");
+                    MessageBox.Show("Username must be at least 4 characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
