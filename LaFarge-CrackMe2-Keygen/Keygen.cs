@@ -72,7 +72,7 @@ namespace LaFarge_CrackMe2_Keygen
 
             int keyLength = xorBytes.Count;
             int keyIndex = 0;
-            
+
             for (int i = byteArray.Count - 1; i >= 0; i--)
             {
                 byte currentUsernameByte = byteArray[i];
@@ -98,7 +98,7 @@ namespace LaFarge_CrackMe2_Keygen
             List<byte> resultantBytes = new List<byte>(new byte[byteArray.Count]);
 
             int keyIndex = 0;
-            
+
             for (int i = 0; i < byteArray.Count; i++)
             {
                 byte currentUsernameByte = byteArray[i];
@@ -214,23 +214,31 @@ namespace LaFarge_CrackMe2_Keygen
 
             // Reverse number for serial key
             long serialKey = ReverseNumber(dividedResult);
-            serialKeyTextBox.Text = serialKey.ToString();
+            txtSerialKey.Text = serialKey.ToString();
         }
 
-        private void GenerateKeyButton_Click(object sender, EventArgs e)
+        private void btnGenerateKey_Click(object sender, EventArgs e)
         {
-            string username = usernameTextBox.Text;
+            string username = txtUsername.Text;
 
             if (username.Length < 4)
             {
-                serialKeyTextBox.Clear();
-                CopyToClipboardButton.Enabled = false;
+                txtSerialKey.Clear();
+                btnCopyToClipboard.Enabled = false;
                 MessageBox.Show("Username must be at least 4 characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 GenerateKey(username);
-                CopyToClipboardButton.Enabled = true;
+                btnCopyToClipboard.Enabled = true;
+            }
+        }
+
+        private void btnCopyToClipboard_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtSerialKey.Text))
+            {
+                Clipboard.SetText(txtSerialKey.Text);
             }
         }
 
@@ -238,35 +246,27 @@ namespace LaFarge_CrackMe2_Keygen
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string username = usernameTextBox.Text;
+                string username = txtUsername.Text;
 
                 if (username.Length < 4)
                 {
-                    serialKeyTextBox.Clear();
-                    CopyToClipboardButton.Enabled = false;
+                    txtSerialKey.Clear();
+                    btnCopyToClipboard.Enabled = false;
                     MessageBox.Show("Username must be at least 4 characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     GenerateKey(username);
-                    CopyToClipboardButton.Enabled = true;
+                    btnCopyToClipboard.Enabled = true;
                 }
 
                 e.SuppressKeyPress = true;
             }
 
             if (e.KeyCode == Keys.Escape)
-            {  
+            {
                 Application.Exit();
                 e.SuppressKeyPress = true;
-            }
-        }
-
-        private void CopyToClipboardButton_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(serialKeyTextBox.Text))
-            {
-                Clipboard.SetText(serialKeyTextBox.Text);
             }
         }
     }

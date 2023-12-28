@@ -30,79 +30,79 @@ namespace LaFarge_CrackMe2_Keygen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Keygen));
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.serialKeyTextBox = new System.Windows.Forms.TextBox();
-            this.GenerateKeyButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CopyToClipboardButton = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtSerialKey = new System.Windows.Forms.TextBox();
+            this.btnGenerateKey = new System.Windows.Forms.Button();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblKey = new System.Windows.Forms.Label();
+            this.btnCopyToClipboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // usernameTextBox
+            // txtUsername
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(78, 18);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(257, 20);
-            this.usernameTextBox.TabIndex = 0;
+            this.txtUsername.Location = new System.Drawing.Point(78, 18);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(257, 20);
+            this.txtUsername.TabIndex = 0;
             // 
-            // serialKeyTextBox
+            // txtSerialKey
             // 
-            this.serialKeyTextBox.Location = new System.Drawing.Point(78, 44);
-            this.serialKeyTextBox.Name = "serialKeyTextBox";
-            this.serialKeyTextBox.ReadOnly = true;
-            this.serialKeyTextBox.Size = new System.Drawing.Size(257, 20);
-            this.serialKeyTextBox.TabIndex = 1;
+            this.txtSerialKey.Location = new System.Drawing.Point(78, 44);
+            this.txtSerialKey.Name = "txtSerialKey";
+            this.txtSerialKey.ReadOnly = true;
+            this.txtSerialKey.Size = new System.Drawing.Size(257, 20);
+            this.txtSerialKey.TabIndex = 1;
             // 
-            // GenerateKeyButton
+            // btnGenerateKey
             // 
-            this.GenerateKeyButton.Location = new System.Drawing.Point(100, 70);
-            this.GenerateKeyButton.Name = "GenerateKeyButton";
-            this.GenerateKeyButton.Size = new System.Drawing.Size(102, 32);
-            this.GenerateKeyButton.TabIndex = 2;
-            this.GenerateKeyButton.Text = "Generate Key";
-            this.GenerateKeyButton.UseVisualStyleBackColor = true;
-            this.GenerateKeyButton.Click += new System.EventHandler(this.GenerateKeyButton_Click);
+            this.btnGenerateKey.Location = new System.Drawing.Point(100, 70);
+            this.btnGenerateKey.Name = "btnGenerateKey";
+            this.btnGenerateKey.Size = new System.Drawing.Size(102, 32);
+            this.btnGenerateKey.TabIndex = 2;
+            this.btnGenerateKey.Text = "Generate Key";
+            this.btnGenerateKey.UseVisualStyleBackColor = true;
+            this.btnGenerateKey.Click += new System.EventHandler(this.btnGenerateKey_Click);
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Username:";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(14, 21);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblUsername.TabIndex = 3;
+            this.lblUsername.Text = "Username:";
             // 
-            // label2
+            // lblKey
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Key:";
+            this.lblKey.AutoSize = true;
+            this.lblKey.Location = new System.Drawing.Point(44, 47);
+            this.lblKey.Name = "lblKey";
+            this.lblKey.Size = new System.Drawing.Size(28, 13);
+            this.lblKey.TabIndex = 4;
+            this.lblKey.Text = "Key:";
             // 
-            // CopyToClipboardButton
+            // btnCopyToClipboard
             // 
-            this.CopyToClipboardButton.Enabled = false;
-            this.CopyToClipboardButton.Location = new System.Drawing.Point(208, 70);
-            this.CopyToClipboardButton.Name = "CopyToClipboardButton";
-            this.CopyToClipboardButton.Size = new System.Drawing.Size(102, 32);
-            this.CopyToClipboardButton.TabIndex = 5;
-            this.CopyToClipboardButton.Text = "Copy To Clipboard";
-            this.CopyToClipboardButton.UseVisualStyleBackColor = true;
-            this.CopyToClipboardButton.Click += new System.EventHandler(this.CopyToClipboardButton_Click);
+            this.btnCopyToClipboard.Enabled = false;
+            this.btnCopyToClipboard.Location = new System.Drawing.Point(208, 70);
+            this.btnCopyToClipboard.Name = "btnCopyToClipboard";
+            this.btnCopyToClipboard.Size = new System.Drawing.Size(102, 32);
+            this.btnCopyToClipboard.TabIndex = 5;
+            this.btnCopyToClipboard.Text = "Copy To Clipboard";
+            this.btnCopyToClipboard.UseVisualStyleBackColor = true;
+            this.btnCopyToClipboard.Click += new System.EventHandler(this.btnCopyToClipboard_Click);
             // 
             // Keygen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 110);
-            this.Controls.Add(this.CopyToClipboardButton);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.GenerateKeyButton);
-            this.Controls.Add(this.serialKeyTextBox);
-            this.Controls.Add(this.usernameTextBox);
+            this.Controls.Add(this.btnCopyToClipboard);
+            this.Controls.Add(this.lblKey);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.btnGenerateKey);
+            this.Controls.Add(this.txtSerialKey);
+            this.Controls.Add(this.txtUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -117,12 +117,12 @@ namespace LaFarge_CrackMe2_Keygen
 
         #endregion
 
-        private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.TextBox serialKeyTextBox;
-        private System.Windows.Forms.Button GenerateKeyButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button CopyToClipboardButton;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtSerialKey;
+        private System.Windows.Forms.Button btnGenerateKey;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblKey;
+        private System.Windows.Forms.Button btnCopyToClipboard;
     }
 }
 
