@@ -4,7 +4,7 @@ To run this keygen, simply navigate to the [Release](https://github.com/JulianOz
 then download ```LaFarge-CrackMe2-Keygen.exe```, and open it. To generate a key, enter a username at least 4 characters long, then click ```Generate Key```. The keygen
 will then provide you with a valid serial key.
 
-![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/1f3c6228-923f-48e9-922e-753867132c8d)
+![LaFarge-CrackMe2-Keygen-UI](https://github.com/JulianOzelRose/LaFarge-CrackMe2-Keygen/assets/95890436/9b49e403-2a24-489a-8c80-6434ea292404)
 
 
 ## Serial key check subroutine
