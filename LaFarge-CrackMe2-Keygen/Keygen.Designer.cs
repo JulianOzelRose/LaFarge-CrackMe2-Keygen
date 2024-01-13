@@ -75,11 +75,11 @@ namespace LaFarge_CrackMe2_Keygen
             // lblKey
             // 
             this.lblKey.AutoSize = true;
-            this.lblKey.Location = new System.Drawing.Point(44, 47);
+            this.lblKey.Location = new System.Drawing.Point(14, 47);
             this.lblKey.Name = "lblKey";
-            this.lblKey.Size = new System.Drawing.Size(28, 13);
+            this.lblKey.Size = new System.Drawing.Size(60, 13);
             this.lblKey.TabIndex = 4;
-            this.lblKey.Text = "Key:";
+            this.lblKey.Text = "Reg. code:";
             // 
             // btnCopyToClipboard
             // 
